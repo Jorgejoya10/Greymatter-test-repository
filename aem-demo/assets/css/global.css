@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -51,6 +50,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: #555555 1px solid;
 }
 
 .ob-nav__logo {
@@ -111,7 +111,7 @@ a {
 .hero__wordmark {
   margin: 0;
   font-weight: 900;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-size: clamp(10rem, 5vw, 3.6rem);
   letter-spacing: 0.02em;
 }
 
@@ -377,4 +377,476 @@ a {
     left: 1.5rem;
     right: 1.5rem;
   }
+}
+
+/* ========== GALLERY PAGE ========== */
+
+.gallery {
+  max-width: 1200px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.gallery__header {
+  margin-bottom: 1.5rem;
+}
+
+.gallery__title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+.gallery__layout {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Lado izquierdo: "SEASONAL ARRANGEMENTS" */
+.gallery__side {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666666;
+  padding-top: 0.6rem;
+}
+
+.gallery__eyebrow {
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Grid de productos */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem 1.6rem;
+}
+
+.gallery-card {
+  font-size: 0.85rem;
+}
+
+.gallery-card__image-wrapper {
+  margin-top: 0.45rem;
+  margin-bottom: 0.6rem;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.gallery-card__image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.gallery-card__title {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.gallery-card__price {
+  margin: 0.15rem 0 0;
+  color: #555555;
+  font-size: 0.8rem;
+}
+
+/* ========== GALLERY SERVICES SECTION (services.html) ========== */
+
+.gallery-services {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 1.5rem;
+}
+
+.gallery-services__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666666;
+  padding-top: 0.5rem;
+}
+
+.gallery-services__wrapper {
+  width: 100%;
+}
+
+.gallery-service__divider {
+  border: none;
+  border-top: 1px solid #e5e2dd;
+  margin: 1.5rem 0 1.25rem;
+}
+
+.gallery-service__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.gallery-service__title {
+  margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.gallery-service__description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.gallery-service__image-wrapper {
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.gallery-service__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Bloque CTA final */
+
+.gallery-services__cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gallery-services__cta-image-wrapper {
+  max-width: 320px;
+  margin: 0 auto 1.5rem;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.gallery-services__cta-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.gallery-services__cta-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+.gallery-services__cta-text {
+  margin: 0 0 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.gallery-services__cta-button {
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #ffbf00;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ========== RESPONSIVE GALLERY ========== */
+
+@media (max-width: 900px) {
+  .gallery__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__side {
+    order: -1;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-services {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-services__label {
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-service__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card__image {
+    height: 200px;
+  }
+}
+
+/* ========== ABOUT: STORY SECTION ========== */
+
+.about-story {
+  max-width: 1200px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.about-story__header {
+  margin-bottom: 1.5rem;
+}
+
+.about-story__title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+/* Layout principal: etiqueta - foto - meta */
+.about-story__layout {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1.4fr) minmax(0, 0.8fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.about-story__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666666;
+  padding-top: 0.3rem;
+}
+
+.about-story__image-wrapper {
+  border-radius: 32px;
+  overflow: hidden;
+  max-width: 360px;
+}
+
+.about-story__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-story__meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding-top: 0.3rem;
+}
+
+.about-story__name {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+}
+
+.about-story__role {
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.8rem;
+  color: #555555;
+}
+
+/* Intro paragraph grande */
+.about-story__intro {
+  max-width: 640px;
+  margin-top: 1rem;
+}
+
+.about-story__intro p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* ========== ABOUT: REVIEW SECTION ========== */
+
+.about-review {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+/* Fila de 3 imágenes pequeñas */
+.about-review__top-images {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.about-review__image-small {
+  flex: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+/* Bloques de texto */
+.about-review__text-block {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.about-review__text-block p {
+  margin: 0 0 0.9rem;
+}
+
+/* Imagen grande central */
+.about-review__image-large-wrapper {
+  border-radius: 32px;
+  overflow: hidden;
+  margin-bottom: 2.2rem;
+}
+
+.about-review__image-large {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* CTA final */
+.about-review__cta {
+  margin-top: 0.5rem;
+}
+
+.about-review__button {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  background-color: #ffbf00;
+  color: #111111;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ========== RESPONSIVE ABOUT ========== */
+
+@media (max-width: 900px) {
+  .about-story__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story__image-wrapper {
+    max-width: 100%;
+  }
+
+  .about-story__meta {
+    padding-top: 0;
+  }
+
+  .about-review__top-images {
+    flex-wrap: wrap;
+  }
+
+  .about-review__image-small {
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-review__top-images {
+    flex-direction: column;
+  }
+
+  .about-review__image-small {
+    flex: 1 1 100%;
+  }
+
+  .about-story__intro p {
+    font-size: 1rem;
+  }
+}
+
+/* ========== HIRE-ME MODAL ========== */
+
+.hire-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  font-family: inherit;
+}
+
+.hire-modal.is-open {
+  display: flex;
+}
+
+.hire-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.hire-modal__dialog {
+  position: relative;
+  max-width: 480px;
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 2rem 2.4rem 2rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
+  z-index: 1;
+}
+
+.hire-modal__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.hire-modal__text {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.hire-modal__highlight {
+  margin: 0 0 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.hire-modal__button {
+  display: inline-block;
+  padding: 0.7rem 1.7rem;
+  border-radius: 999px;
+  background-color: #ffbf00;
+  color: #111111;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hire-modal__button:hover {
+  filter: brightness(0.95);
+}
+
+.hire-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
