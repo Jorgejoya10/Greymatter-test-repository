@@ -1,14 +1,27 @@
-<nav class="ob-nav">
-  <a href="./index.html">
-    <div class="ob-nav__logo">Our Blooms®</div>
-  </a>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      Our Blooms<sup>®</sup>
+    </div>
 
-  <ul class="ob-nav__links">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./gallery.html">Gallery</a></li>
-    <li><a href="./about.html">About</a></li>
-  </ul>
+    <button
+      class="header__burger"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+    </button>
 
-  <button class="ob-nav__cta" id="shop-now-cta">Shop now</button>
-</nav>
+    <nav class="header__nav">
+      <a href="index.html" class="header__link">Home</a>
+      <a href="gallery.html" class="header__link">Gallery</a>
+      <a href="about.html" class="header__link">About</a>
+    </nav>
 
+    <button class="header__cta" id="shop-now-cta">
+      Shop now
+    </button>
+  </div>
+</header>

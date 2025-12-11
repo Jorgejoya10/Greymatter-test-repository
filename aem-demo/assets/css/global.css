@@ -37,64 +37,122 @@ a {
   padding: 0 1.5rem;
 }
 
-/* ========== NAV / HEADER ========== */
+/* ========== HEADER BASE ========== */
 
-#header-slot {
-  margin-top: 1.5rem;
+.header {
+  border-bottom: 1px solid #e2ddd4;
+  background-color: #fdf7ee;
 }
 
-.ob-nav {
-  max-width: 1200px;
+.header__inner {
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 1.5rem 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: #555555 1px solid;
+  gap: 1rem;
 }
 
-.ob-nav__logo {
+.header__logo {
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
-.ob-nav__links {
-  list-style: none;
+/* nav en desktop */
+.header__nav {
   display: flex;
-  gap: 1.5rem;
-  padding: 0;
-  margin: 0;
-  font-size: 0.9rem;
+  gap: 1.75rem;
+  font-size: 0.95rem;
 }
 
-.ob-nav__links a {
-  position: relative;
+.header__link {
+  text-decoration: none;
+  color: #111;
 }
 
-.ob-nav__links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.2rem;
-  width: 0;
-  height: 1px;
-  background-color: #111111;
-  transition: width 0.2s ease;
+.header__link:hover {
+  text-decoration: underline;
 }
 
-.ob-nav__links a:hover::after {
-  width: 100%;
-}
-
-.ob-nav__cta {
+/* botón CTA */
+.header__cta {
   padding: 0.55rem 1.4rem;
   border-radius: 999px;
   border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
   background-color: #ffbf00;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
+
+/* ========== BOTÓN HAMBURGUESA ========== */
+
+.header__burger {
+  display: none; /* por defecto oculto en desktop */
+  border: none;
+  background: transparent;
+  padding: 0.25rem;
+  margin-right: 0.35rem;
+  cursor: pointer;
+}
+
+.header__burger-line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: #111;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.header__burger-line + .header__burger-line {
+  margin-top: 4px;
+}
+
+/* ========== LAYOUT MOBILE ========== */
+
+@media (max-width: 768px) {
+  .header__inner {
+    padding-inline: 1rem;
+  }
+
+  /* mostramos hamburguesa y ocultamos nav inline */
+  .header__burger {
+    display: inline-flex;
+  }
+
+  .header__nav {
+    position: fixed;
+    inset: 64px 0 0; /* debajo del header */
+    background-color: #fdf7ee;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 1.75rem 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    z-index: 900;
+  }
+
+  .header--menu-open .header__nav {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* animación simple del icono cuando el menú está abierto */
+  .header--menu-open .header__burger-line:first-child {
+    transform: translateY(3px) rotate(45deg);
+  }
+
+  .header--menu-open .header__burger-line:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+  }
+}
+
 
 /* ========== HERO ========== */
 
@@ -111,7 +169,7 @@ a {
 .hero__wordmark {
   margin: 0;
   font-weight: 900;
-  font-size: clamp(10rem, 5vw, 3.6rem);
+  font-size: clamp(2.4rem, 5vw, 10rem);
   letter-spacing: 0.02em;
 }
 
